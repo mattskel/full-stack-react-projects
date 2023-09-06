@@ -1,3 +1,4 @@
+import config from './../config/config'
 import express from 'express';
 import path from 'path'
 import template from './../template'
@@ -26,10 +27,9 @@ app.get('/', (req, res) => {
 const CURRENT_WORKING_DIR = process.cwd()
 app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist'))) // Serve static files from the dist folder. Make files available on requests from the client
 
-let port = process.env.PORT || 3000;
-app.listen(port, function onStart(err) {
+app.listen(config.port, (err) => {
   if (err) {
     console.log(err)
   }
-  console.info('Server started on port %s.', port)
-})
+    console.info('Server started on port %s.', config.port)
+ })
