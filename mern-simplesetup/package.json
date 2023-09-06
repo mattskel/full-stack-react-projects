@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "MERN boilerplate for a simple setup project",
   "main": "template.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "development": "nodemon",
@@ -32,11 +31,11 @@
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-react": "^7.22.15",
     "babel-loader": "^8.1.0",
-    "nodemon": "2.0.2",
-    "webpack": "4.42.1",
-    "webpack-cli": "3.3.11",
-    "webpack-dev-middleware": "3.7.2",
-    "webpack-hot-middleware": "2.25.0",
-    "webpack-node-externals": "1.7.2"
+    "nodemon": "^3.0.1",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-middleware": "^6.1.1",
+    "webpack-hot-middleware": "^2.25.4",
+    "webpack-node-externals": "^3.0.0"
   }
 }
