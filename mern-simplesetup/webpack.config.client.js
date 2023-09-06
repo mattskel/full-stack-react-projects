@@ -7,7 +7,8 @@ const config = {
   mode: "development",
   devtool: 'eval-source-map',
   entry: [
-    'webpack-hot-middleware/client?reload=tru',
+    'react-hot-loader/patch',
+    'webpack-hot-middleware/client?reload=true',
     path.join(CURRENT_WORKING_DIR, 'client/main.js')
   ],
   output: {
@@ -18,21 +19,18 @@ const config = {
   module: {
     rules: [
       {
-        test:  /\.jsx?$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: [
+            'babel-loader'
+        ]
       }
     ]
-  },
+  },  
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
-  ],
-  resolve: {
-    alias: {
-      'react-dom': '@hot-loader/react-dom'
-    }
-  }
+  ]
 }
 
 module.exports = config
