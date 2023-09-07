@@ -20,8 +20,17 @@
   "license": "ISC",
   "dependencies": {
     "@hot-loader/react-dom": "16.13.0",
+    "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "express": "4.17.1",
+    "express-jwt": "^8.4.1",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
     "mongodb": "3.5.5",
+    "mongoose": "^7.5.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-hot-loader": "4.12.20"
