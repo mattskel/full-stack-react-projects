@@ -2,7 +2,7 @@ import config from './../config/config'
 import express from 'express';
 import path from 'path'
 import template from './../template'
-import { MongoClient } from 'mongodb'
+import mongoose from 'mongoose'
 
 // Comment out before building for production
 import devBundle from './devBundle'
@@ -12,12 +12,12 @@ const app = express();
 // Comment out before building for production
 devBundle.compile(app);
 
-const url = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mernSimpleSetup'
-MongoClient.connect(url, (err, db) => {
-  if (err) throw err;
-  console.log("Connected successfully to mongodb server")
-  db.close()
-})
+// Connection URL
+// mongoose.Promise = global.Promise
+mongoose.connect(config.mongoUri)
+mongoose.connection.on('error', (err) => {
+  console.error('MongoDB connection error:', err);
+});
 
 
 app.get('/', (req, res) => {
